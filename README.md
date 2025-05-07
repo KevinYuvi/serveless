@@ -1,3 +1,3 @@
-# Centralizado - Adaptado a Serverless para Vercel
+# React Avanzado
 
-Esta versión del proyecto Flask está preparada para ser desplegada en Vercel como función serverless.
+Proyecto React con rutas, estado local y estilos.
