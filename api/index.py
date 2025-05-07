@@ -1,12 +1,11 @@
 from flask import Flask
-from vercel_wsgi import handle_request  # Importa el adaptador correcto
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Hola desde Flask en Vercel 🚀'
+@app.route("/")
+def index():
+    return "¡Hola desde Flask serverless sin errores!"
 
-# Este es el handler real que Vercel espera
-def handler(environ, start_response):
-    return handle_request(app, environ, start_response)
+# Vercel usará directamente este WSGI app
+# y NO necesita un 'handler' explícito si el archivo se llama index.py
+wsgi_app = app.wsgi_app
